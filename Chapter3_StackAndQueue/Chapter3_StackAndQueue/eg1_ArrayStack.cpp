@@ -20,11 +20,13 @@ inline void error(const char* message) { // const char* message <==> const char 
 // char* message: 포인터로 가리키는 데이터를 수정할 수 없다.
 
 const int MAX_STACK_SIZE = 20;
+
+template <typename T> 
 class ArrayStack
 {
 private:
 	int top;
-	int arr[MAX_STACK_SIZE];
+	T arr[MAX_STACK_SIZE]; // int arr[MAX_STACK_SIZE];
 public:
 	ArrayStack() { 
 		top = -1;
@@ -39,9 +41,9 @@ public:
 		return top == MAX_STACK_SIZE - 1;
 	}
 
-	void push(int e) {
+	void push(T value) { // push(int e)
 		if (isFull()) error("Stack is full");
-		arr[++top] = e;
+		arr[++top] = value; // arr[++top] = e;
 	}
 	int pop() {
 		if (isEmpty()) error("Stack is empty");
