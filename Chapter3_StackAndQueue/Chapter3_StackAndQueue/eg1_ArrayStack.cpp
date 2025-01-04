@@ -45,11 +45,11 @@ public:
 		if (isFull()) error("Stack is full");
 		arr[++top] = value; // arr[++top] = e;
 	}
-	int pop() {
+	T pop() {
 		if (isEmpty()) error("Stack is empty");
 		return arr[top--];
 	}
-	int peek() {
+	T peek() {
 		if (isEmpty()) error("Stack is empty");
 		return arr[top];
 	}
