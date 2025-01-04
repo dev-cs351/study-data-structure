@@ -10,7 +10,7 @@ inline void error(const char* message) {
 template <typename T>
 class CircularQueue
 {
-private:
+protected:
 	int front, rear;
 	T data[MAX_QUEUE_SIZE];
 public:
@@ -31,15 +31,12 @@ public:
 	}
 	T dequeue() {
 		if (isEmpty()) error("Queue is emptry\n");
-		else {
-			front = (front + 1) % MAX_QUEUE_SIZE;
-			return data[front];
-		}		
+		front = (front + 1) % MAX_QUEUE_SIZE;
+		return data[front];	
 	}
 	T peek() {
 		if (isEmpty()) error("Queue is emptry\n");
-		else
-			return data[(front + 1) % MAX_QUEUE_SIZE];
+		return data[(front + 1) % MAX_QUEUE_SIZE];
 	}
 	void display() {
 		int maxi = (front < rear) ? rear : rear + MAX_QUEUE_SIZE;
