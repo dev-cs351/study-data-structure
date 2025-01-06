@@ -8,7 +8,7 @@ struct NewType {
 void foo(int a) {
 	printf("foo: %d\n", a);
 }
-
+/*
 int main() {
 	NewType s, * ps;
 	ps = &s; // 객체 s의 주소를 가리키는 객체 포인터 ps
@@ -25,3 +25,4 @@ int main() {
 	k(10); // 포인터가 가르키는 객체에 10 삽입(함수 파라미터에 10 삽입)
 	(*k)(100); // 포인터가 가르키는 객체에 10 삽입(함수 파라미터에 100 삽입)
 }
+*/

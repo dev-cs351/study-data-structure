@@ -1,5 +1,5 @@
 #include <cstdio>
-
+/*
 int main(void) {
 	char* str; // 포인터 변수 str 선언
 	int size = 1000;
@@ -19,3 +19,4 @@ int main(void) {
 		printf("%d\n", &str); // 12행과 동일한 주소가 출력됨.
 	}
 }
+*/

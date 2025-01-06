@@ -36,7 +36,7 @@ void print2DInt(int** mat, int rows, int cols) {
 	}
 	printf("\n");
 }
-
+/*
 int main() {
 	int** mat;
 	int rows, cols;
@@ -50,3 +50,4 @@ int main() {
 	free2DInt(mat, rows, cols);
 	// print2DInt(mat, rows, cols); // 엑세스 위반. 어느 메모리 구역을 출력하는지 알 수 없고, 보안적으로 위험함.
 }
+*/
