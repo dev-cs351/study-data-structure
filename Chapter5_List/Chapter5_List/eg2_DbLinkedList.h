@@ -9,7 +9,9 @@ public:
 
 	Node2* getEntry(int pos) { // pos 번째 노드 반환
 		Node2* n = &org; // 헤드 노드 부터 시작
-		for (int i = 0; i < pos; i++, n = n->getNext()) // pos 번째 노드까지 이동
+
+		// for (int i = 0; i < pos; i++, n = n->getNext()) 에서 등호 하나 추가. 등호가 없을 때 에러가 왜 생길까?
+		for (int i = 0; i <= pos; i++, n = n->getNext()) // pos 번째 노드까지 이동
 			if (n == NULL) break;
 		return n;
 	}
@@ -29,7 +31,7 @@ public:
 	}
 	void replace(int pos, Node2* n) { // a, b -> a, n 
 		Node2* prev = getEntry(pos - 1); // a
-		if (prev != NULL) {
+		if (prev != NULL && prev->getNext() != NULL) {
 			delete prev->getNext()->remove(); // a.next.remove() => b.remove()
 			prev->insertNext(n); // a.insertNext(n)
 		}
@@ -41,8 +43,7 @@ public:
 		return count;
 	}
 	void clear() {
-		Node2* p = getHead();
-		if(p!=NULL)
+		for (Node2* p = getHead(); p != NULL; p = p->getNext())
 			p->remove();
 	}
 	void display() {

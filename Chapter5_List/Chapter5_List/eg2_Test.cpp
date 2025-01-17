@@ -15,3 +15,7 @@ int main() {
 	list.clear();
 	list.display();
 }
+
+// ¿¡·¯ »ý±è
+
+// delete_scalar.cpp ??
